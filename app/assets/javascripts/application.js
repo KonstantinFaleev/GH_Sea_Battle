@@ -18,8 +18,12 @@
 
 $(document).on('turbolinks:load', function() {
 
-    Sortable.create(users, {
-        animation: 200
+    Sortable.create(Корабли, {
+        group: 'shared'
+    });
+
+    Sortable.create(Поле, {
+        group: 'shared'
     });
 
 });
