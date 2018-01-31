@@ -9,7 +9,17 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require jquery
+//= require bootstrap-sprockets
+//= require sortable-rails
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+
+    Sortable.create(users, {
+        animation: 200
+    });
+
+});
