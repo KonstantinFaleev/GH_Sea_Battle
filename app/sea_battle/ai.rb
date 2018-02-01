@@ -7,17 +7,12 @@ class Ai
     @my_shots
   end
 
-  def attack
+  def attack (shild, coords)
     []
-  end
-
-  def last_attack_result(status)
 
   end
 
-  def attacked(coors)
 
-  end
 
   private
 
