@@ -16,14 +16,3 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
-
-    Sortable.create(Корабли, {
-        group: 'shared'
-    });
-
-    Sortable.create(Поле, {
-        group: 'shared'
-    });
-
-});
