@@ -9,7 +9,7 @@ class Ship2Controller < ApplicationController
 
     @player_one.each_index do |x_axis|
       @player_one[x_axis].each_index do |y_axis|
-        @player_one[x_axis][y_axis] = [x_axis, '_', y_axis]
+        @player_one[x_axis][y_axis] = ''
       end
     end
 
