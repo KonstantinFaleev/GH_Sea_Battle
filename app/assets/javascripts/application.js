@@ -16,10 +16,3 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).on('turbolinks:load', function() {
-
-    Sortable.create(users, {
-        animation: 200
-    });
-
-});
