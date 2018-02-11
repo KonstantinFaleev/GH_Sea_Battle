@@ -1,0 +1,13 @@
+<table class="table-bordered text-center table-1" >
+<% @player_one.each_index do |i| %>
+    <tr>
+<% @player_one[i].each_index do |j| %>
+      <td>&nbsp;
+<%= @player_one[i][j].to_s %>
+      </td>
+    <% end %>
+    </tr>
+<% end %>
+</table>
+
+

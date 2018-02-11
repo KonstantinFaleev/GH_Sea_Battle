@@ -15,26 +15,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  background: #eee;
-  margin: 1px;
-  padding: 10px 15px;
-  cursor: move;
-  border-radius: 5px;
-}
-
-.sortable-ghost {
-  opacity: .3;
-  background: #f60;
-}
-
-
-#listC {
-  border: 2px dashed #f60;
-  min-height: 100px
+.table-1 td {
+  height: 33px;
+  width: 33px
 }
