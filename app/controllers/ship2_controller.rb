@@ -103,18 +103,18 @@ class Ship2Controller < ApplicationController
   private
   def free_cell(x_axis, y_axis, position, size)
     from_x = x_axis - 1
-    if x_axis < 9
-      to_x = x_axis + 1
-    else
-      to_x = x_axis
-    end
+    to_x = if x_axis < 9
+               x_axis + 1
+            else
+              x_axis
+            end
     from_y = y_axis - 1
     to_y = y_axis + size
 
-    for i in from_x..to_x do
-      for j in from_y..to_y do
-        if @player_one[i][j] == ''
-          @player_one[i][j] = '.'
+    (from_x..to_x).each do |x_coor|
+      (from_y..to_y).each do |y_coor|
+        if @player_one[x_coor][y_coor] == ''
+          @player_one[x_coor][y_coor] = '.'
         else
           return false
         end
