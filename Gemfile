@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'rubocop'
 # sortable on js
 gem 'sortable-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -14,8 +15,9 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~> 3.3.7'
+gem 'sass-rails', '~> 5.0'
+
 gem 'jquery-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
