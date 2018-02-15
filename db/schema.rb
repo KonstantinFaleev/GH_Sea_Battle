@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215131410) do
+ActiveRecord::Schema.define(version: 20180215133931) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "boards", force: :cascade do |t|
+    t.integer "player_id"
+    t.text "grid"
+    t.text "available_ships"
+    t.boolean "direction", default: false
+    t.boolean "saved", default: false
+    t.string "title", default: "No title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "games", force: :cascade do |t|
     t.integer "player_a_id"
@@ -28,6 +39,20 @@ ActiveRecord::Schema.define(version: 20180215131410) do
     t.text "game_log", default: "Game has started."
     t.text "ai_moves_pull"
     t.text "ai_neglected_moves"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.string "remember_token"
+    t.integer "rating", default: 0
+    t.integer "ships_lost", default: 0
+    t.integer "ships_destroyed", default: 0
+    t.boolean "admin", default: false
+    t.datetime "last_response_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
