@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180130135052) do
+ActiveRecord::Schema.define(version: 20180215131410) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "games", force: :cascade do |t|
+    t.integer "player_a_id"
+    t.integer "player_b_id"
+    t.integer "winner_id"
+    t.integer "looser_id"
+    t.integer "player_a_ships", default: 20
+    t.integer "player_b_ships", default: 20
+    t.string "play_status"
+    t.text "player_a_board"
+    t.text "player_b_board"
+    t.text "game_log", default: "Game has started."
+    t.text "ai_moves_pull"
+    t.text "ai_neglected_moves"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "ship2s", force: :cascade do |t|
     t.integer "x"
