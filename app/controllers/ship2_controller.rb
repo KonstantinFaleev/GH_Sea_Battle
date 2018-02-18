@@ -1,6 +1,7 @@
 class Ship2Controller < ApplicationController
 
   def create
+
   end
 
   def show
@@ -62,7 +63,7 @@ class Ship2Controller < ApplicationController
         y_axis = rand(0..9)
         border = x_axis + 3
         if @player_one[x_axis][y_axis].empty?
-          if free_cell(x_axis, y_axis, position, 2)
+          if free_cell(x_axis, y_axis, position, 3)
             while x_axis < border
               puts('while_3')
               @player_one[y_axis][x_axis] = '3'
