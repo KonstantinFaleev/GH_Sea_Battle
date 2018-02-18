@@ -1,0 +1,70 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Регистрация</a></li>
+        <li><a href="#">Правила</a></li>
+        <li><a href="#">О проекте</a></li>
+        <li><a href="#">Контакты</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Вход</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container text-center">
+  <h3>Морской бой</h3><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <p>Ваши корабли</p>
+      <table class="table-bordered text-center table-1" >
+        <% @player_one.each_index do |i| %>
+          <tr>
+            <% @player_one[i].each_index do |j| %>
+              <td>&nbsp;
+                <%= @player_one[i][j].to_s %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+
+    </div>
+    <div class="col-sm-4">
+      <p>Поле противника</p>
+      <table class="table-bordered text-center table-1" >
+        <% @player_two.each_index do |i| %>
+          <tr>
+            <% @player_two[i].each_index do |j| %>
+              <td>&nbsp;
+                <%= @player_two[i][j].to_s %>
+              </td>
+            <% end %>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="col-sm-4">
+      <ul class="list-group">
+        <li class="list-group-item"><%= button_to 'Расставить корабли автоматически', {action: 'create'}, {class: 'btn-info btn-xs'} %></li>
+        <li class="list-group-item">Расставить корабли вручную</li>
+        <li class="list-group-item">Играть</li>
+        <li class="list-group-item">Сдаться</li>
+      </ul>
+    </div>
+  </div>
+</div><br>
+
+<footer class="container-fluid text-center">
+  <p>GH 2017-2018</p>
+</footer>
