@@ -1,16 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'game#show'
+  root 'game#index'
 
-  get 'game/show'
-
-  get 'game/create'
-
-  get 'game/move'
-
-  get 'game/win'
-
-  resources :ship2
+  resources :game
   resources :ship
 
 end
