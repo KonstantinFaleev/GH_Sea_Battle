@@ -1,7 +1,8 @@
 class GameController < ApplicationController
+
   def index
-    @player_one = Array.new(10).map! { Array.new(10) }
-    @player_two = Array.new(10).map! { Array.new(10) }
+    @player_one = Sea.new
+    #@player_two = Sea.new
   end
 
 
@@ -16,8 +17,8 @@ class GameController < ApplicationController
   def create
     @player_two = Array.new(10).map! { Array.new(10) }
     @player_one = Array.new(10).map! { Array.new(10) }
-    @player_one.each_index do |x_axis|
-      @player_one[x_axis].each_index do |y_axis|
+    @player_one.each do |x_axis|
+      @player_one[x_axis].each do |y_axis|
         @player_one[x_axis][y_axis] = ''
       end
     end
