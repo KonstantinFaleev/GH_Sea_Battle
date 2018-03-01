@@ -28,15 +28,20 @@
     <div class="col-sm-4">
       <p>Ваши корабли</p>
       <table class="table-bordered text-center table-1" >
+
         <% @player_one.each_index do |i| %>
           <tr>
             <% @player_one[i].each_index do |j| %>
-              <td>&nbsp;
-                <%= @player_one[i][j].to_s %>
+              <% if @player_one[i][j].to_s == 'x' %>
+                <td bgcolor="blue">
+              <% else %>
+                <td>
+              <% end %>
               </td>
             <% end %>
           </tr>
         <% end %>
+
       </table>
 
     </div>
@@ -46,8 +51,12 @@
         <% @player_two.each_index do |i| %>
           <tr>
             <% @player_two[i].each_index do |j| %>
-              <td>&nbsp;
-                <%= @player_two[i][j].to_s %>
+
+                <% if @player_two[i][j].to_s == 'x' %>
+                  <td bgcolor="red">
+                <% else %>
+                  <td>
+                <% end %>
               </td>
             <% end %>
           </tr>

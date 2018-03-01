@@ -1,6 +1,6 @@
 class CreateGames < ActiveRecord::Migration[5.1]
   def change
-    create_table :games, :force => true do |t|
+    create_table :game, :force => true do |t|
       t.integer  :player_a_id
       t.integer  :player_b_id
       t.integer  :winner_id

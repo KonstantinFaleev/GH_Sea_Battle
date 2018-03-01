@@ -1,6 +1,8 @@
-class Ship2 < ApplicationRecord
+class Ship2 < ApplicationController
+
   def new
-    [2,5,5,5,5,4,4]
+    @player_two = Array.new(10).map! { Array.new(10) }
+    @player_one = Array.new(10).map! { Array.new(10) }
   end
 
 end

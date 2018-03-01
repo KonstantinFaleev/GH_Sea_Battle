@@ -110,7 +110,7 @@ class Game
       self.update_attributes :winner => player
       if self.winner == self.player_a
         self.update_attributes :looser => player_b
-        self.play_status = "You have won this game. Congratulations!"
+        self.play_status = "You have won this games. Congratulations!"
       else
         self.update_attributes :looser => player_a
         if surrender
