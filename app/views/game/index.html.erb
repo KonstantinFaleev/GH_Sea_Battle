@@ -29,10 +29,10 @@
       <p>Ваши корабли</p>
       <table class="table-bordered text-center table-1" >
 
-        <% @player_one.each_index do |i| %>
+        <% 1.upto(@player_one.field_size) do |x_axis| %>
           <tr>
-            <% @player_one[i].each_index do |j| %>
-              <% if @player_one[i][j].to_s == 'x' %>
+            <% 1.upto(@player_one.field_size) do |y_axis| %>
+              <% if @player_one.cell(x_axis, y_axis).status == 'x' %>
                 <td bgcolor="blue">
               <% else %>
                 <td>
@@ -48,15 +48,14 @@
     <div class="col-sm-4">
       <p>Поле противника</p>
       <table class="table-bordered text-center table-1" >
-        <% @player_two.each_index do |i| %>
+        <% 1.upto(@player_two.field_size) do |x_axis| %>
           <tr>
-            <% @player_two[i].each_index do |j| %>
-
-                <% if @player_two[i][j].to_s == 'x' %>
-                  <td bgcolor="red">
-                <% else %>
-                  <td>
-                <% end %>
+            <% 1.upto(@player_two.field_size) do |y_axis| %>
+              <% if @player_two.cell(x_axis, y_axis).status == 'x' %>
+                <td bgcolor="blue">
+              <% else %>
+                <td>
+              <% end %>
               </td>
             <% end %>
           </tr>
