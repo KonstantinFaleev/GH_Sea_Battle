@@ -8,4 +8,8 @@ class Cell
   def free?
     status == 'free'
   end
+
+  def status
+
+  end
 end

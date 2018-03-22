@@ -32,7 +32,7 @@
         <% 1.upto(@player_one.field_size) do |x_axis| %>
           <tr>
             <% 1.upto(@player_one.field_size) do |y_axis| %>
-              <% if @player_one.cell(x_axis, y_axis).status == 'x' %>
+              <% if @player_one[x_axis][y_axis].cells == 'ship_alive' %>
                 <td bgcolor="blue">
               <% else %>
                 <td>
@@ -51,8 +51,8 @@
         <% 1.upto(@player_two.field_size) do |x_axis| %>
           <tr>
             <% 1.upto(@player_two.field_size) do |y_axis| %>
-              <% if @player_two.cell(x_axis, y_axis).status == 'x' %>
-                <td bgcolor="blue">
+              <% if @player_two.cells == 'ship_dead' %>
+                <td bgcolor="red">
               <% else %>
                 <td>
               <% end %>
