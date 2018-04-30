@@ -3,18 +3,6 @@ class Sea
 
   attr_reader :player_field, :field_size, :cells, :status
 
-  def initialize(blank: true, field_size: 10)
-    if blank
-      puts 'empty field'
-      @field_size = field_size
-    else
-      puts 'full_field'
-      @field_size = field_size
-      @cells = build_field(field_size)
-      puts @cells
-    end
-  end
-
   def cell_status(x_axis, y_axis)
     @cells[x_axis][y_axis]
   end
@@ -35,9 +23,7 @@ class Sea
     cells
   end
 
-  def field_empty
-    Array.new(10).map! { Array.new(10).map! { |elem| elem = ''} }
-  end
+
 
   def create_ship(cells, direction)
     case cells

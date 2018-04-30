@@ -29,10 +29,11 @@
       <p>Ваши корабли</p>
       <table class="table-bordered text-center table-1" >
 
-        <% 1.upto(@player_one.field_size) do |x_axis| %>
+        <% @player_one.size.times do |y_axis| %>
           <tr>
-            <% 1.upto(@player_one.field_size) do |y_axis| %>
-              <% if @player_one[x_axis][y_axis].cells == 'ship_alive' %>
+            <% @player_one.size.times do |x_axis| %>
+              <%= puts @player_one[x_axis][y_axis] %>
+              <% if @player_one[x_axis][y_axis].status == 1 %>
                 <td bgcolor="blue">
               <% else %>
                 <td>
@@ -48,10 +49,10 @@
     <div class="col-sm-4">
       <p>Поле противника</p>
       <table class="table-bordered text-center table-1" >
-        <% 1.upto(@player_two.field_size) do |x_axis| %>
+        <% @player_two.size.times do |y_axis| %>
           <tr>
-            <% 1.upto(@player_two.field_size) do |y_axis| %>
-              <% if @player_two.cells == 'ship_dead' %>
+            <% @player_two.size.times do |x_axis| %>
+              <% if @player_two[x_axis][y_axis] == 'ship_dead' %>
                 <td bgcolor="red">
               <% else %>
                 <td>
