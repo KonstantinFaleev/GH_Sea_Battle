@@ -1,4 +1,5 @@
 class Board
+  attr_reader :player_one, :player_two
 
   def add_board
     if self.new_record?
@@ -13,5 +14,10 @@ class Board
       end
       self.grid = grid
     end
+  end
+
+  def new
+    @player_two = Array.new(10).map! { Array.new(10) }
+    @player_one = Array.new(10).map! { Array.new(10) }
   end
 end
